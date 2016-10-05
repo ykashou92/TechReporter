@@ -18,3 +18,5 @@
 - [ ] Debug, identify and fix problems with report generation
 - [ ] Implement auto support-resistance lines
 - [ ] Implement Roxygen Skeleton
+- [ ] Finishing touches
+- [ ] App Deployed!
