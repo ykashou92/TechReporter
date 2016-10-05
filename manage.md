@@ -1,6 +1,6 @@
 # TechReporter Project Management
 
-- [ ] Setup local directory
+- [x] Setup local directory
 - [ ] Setup `ProjectTemplate`
 - [ ] Draw the UI on paper
 - [ ] Code the UI
