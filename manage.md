@@ -9,8 +9,12 @@
 - [ ] Implement RSI code
 - [ ] Implement Slow Stochastics code
 - [ ] Implement Bollinger Band code
-- [ ] Implement 3 Moving Average codes
+- [ ] Implement Moving Averages code
 - [ ] Create a time-series chart of the stock data
 - [ ] Apply the indicators on the chart
 - [ ] Setup knitting template for the report to be generated
 - [ ] Implement a button to generate
+- [ ] Generate sample report
+- [ ] Debug, identify and fix problems with report generation
+- [ ] Implement auto support-resistance lines
+- [ ] Implement Roxygen Skeleton
