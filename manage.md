@@ -1,11 +1,12 @@
 # TechReporter Project Management
 
-- [ ] Setup local directory
+- [x] Setup local directory
 - [ ] Setup `ProjectTemplate`
 - [ ] Draw the UI on paper
 - [ ] Code the UI
 - [ ] Flowchart the logic of performing tech analysis on a stock
-- [ ] Implement code that periodically accesses and stores stock performance data
+- [ ] Implement code that accesses data
+- [ ] Chart theme
 - [ ] Implement RSI code
 - [ ] Implement Slow Stochastics code
 - [ ] Implement Bollinger Band code
@@ -18,3 +19,5 @@
 - [ ] Debug, identify and fix problems with report generation
 - [ ] Implement auto support-resistance lines
 - [ ] Implement Roxygen Skeleton
+- [ ] Finishing touches
+- [ ] App Deployed!
