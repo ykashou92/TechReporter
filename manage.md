@@ -1,18 +1,17 @@
 # TechReporter Project Management
 
 - [x] Setup local directory
-- [ ] Setup `ProjectTemplate`
-- [ ] Draw the UI on paper
+- [x] Visualize the UI
 - [ ] Code the UI
 - [ ] Flowchart the logic of performing tech analysis on a stock
-- [ ] Implement code that accesses data
+- [x] Implement code that accesses data
 - [ ] Chart theme
-- [ ] Implement RSI code
-- [ ] Implement Slow Stochastics code
-- [ ] Implement Bollinger Band code
-- [ ] Implement Moving Averages code
-- [ ] Create a time-series chart of the stock data
-- [ ] Apply the indicators on the chart
+- [x] Implement RSI code
+- [x] Implement Slow Stochastics code
+- [x] Implement Bollinger Band code
+- [x] Implement Moving Averages code
+- [x] Create a time-series chart of the stock data
+- [x] Apply the indicators on the chart
 - [ ] Setup knitting template for the report to be generated
 - [ ] Implement a button to generate
 - [ ] Generate sample report

@@ -1,14 +1,6 @@
-#
-# This is the server logic of a Shiny web application. You can run the 
-# application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-# 
-#    http://shiny.rstudio.com/
-#
-
-library(shiny)
-library(quantmod)
+################
+### server.R ###
+################
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
@@ -37,7 +29,6 @@ addSMA(n = 50, col = 'green')"
                                    dn.col = "red", 
                                    fg.col = "black", 
                                    bg.col = "white"))
-      
     }
   })
 })
