@@ -18,13 +18,13 @@ shinyUI(fluidPage(
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-       textInput("stock", "Symbol:", value = "^DJI"),
+       textInput("stock", "Symbol:", value = ""),
        submitButton(text = "Generate Report")
     ),
     
     # Show a plot of the generated distribution
     mainPanel(
-       plotOutput("mainPlot")
+       plotOutput("mainPlot", height = "700px")
     )
   )
 ))

@@ -23,15 +23,21 @@ shinyServer(function(input, output) {
   })
 
   output$mainPlot <- renderPlot({
+    TA.indicators = "addVo(); addBBands(); addMACD(); addRSI(); 
+addSMI(n = 3, fas = 3, slow = 14); addSMA(n = 200, col = 'yellow');
+addSMA(n = 50, col = 'green')"
+    
     if(!is.null(stock.sym())) {
     chartSeries(stock.sym(),
                 name = input$stock,
                 subset = 'last 6 months', 
+                TA = TA.indicators,
                 theme = chartTheme("white", 
                                    up.col = "#87CEEB", 
                                    dn.col = "red", 
                                    fg.col = "black", 
                                    bg.col = "white"))
+      
     }
   })
 })
