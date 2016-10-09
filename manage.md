@@ -2,16 +2,17 @@
 
 - [x] Setup local directory
 - [x] Visualize the UI
-- [ ] Code the UI
-- [ ] Flowchart the logic of performing tech analysis on a stock
-- [x] Implement code that accesses data
-- [ ] Chart theme
 - [x] Implement RSI code
 - [x] Implement Slow Stochastics code
 - [x] Implement Bollinger Band code
 - [x] Implement Moving Averages code
 - [x] Create a time-series chart of the stock data
 - [x] Apply the indicators on the chart
+- [x] Implement code that accesses stock data
+- [ ] Implement ShinyDashboard
+- [ ] Implement news-mining code
+- [ ] Flowchart the logic of performing tech analysis on a stock
+- [ ] Customize Chart theme
 - [ ] Setup knitting template for the report to be generated
 - [ ] Implement a button to generate
 - [ ] Generate sample report

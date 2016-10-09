@@ -13,7 +13,7 @@ shinyServer(function(input, output) {
       return(NULL)
       })
   })
-
+  
   output$mainPlot <- renderPlot({
     TA.indicators = "addVo(); addBBands(); addMACD(); addRSI(); 
 addSMI(n = 3, fas = 3, slow = 14); addSMA(n = 200, col = 'yellow');
