@@ -10,6 +10,7 @@
 - [x] Apply the indicators on the chart
 - [x] Implement code that accesses stock data
 - [x] Implement ShinyDashboard
+- [x] Create sidebar tabs 
 - [ ] Implement news-mining code
 - [ ] Flowchart the logic of performing tech analysis on a stock
 - [ ] Customize Chart theme
