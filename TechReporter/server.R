@@ -18,13 +18,6 @@ shinyServer(function(input, output) {
     input$stock
   })
   
-  output$opt.chain <- renderTable({
-    detach("package:quantmod", unload=TRUE)    
-    require(flipsideR)
-        opt.price <- getOptionChain(symbol())
-        opt.price
-  })
-  
   output$mainPlot <- renderPlot({
     TA.indicators = "addVo(); addBBands(); addMACD(); addRSI(); 
 addSMI(n = 3, fas = 3, slow = 14); addSMA(n = 200, col = 'yellow');
@@ -42,13 +35,26 @@ addSMA(n = 50, col = 'green')"
                                    bg.col = "white"))
     }
   })
-  #output$news <- renderText({
-    #if(!is.null(stock.sym())) {
-      #x <- toString(stock.sym())
-    #googlenews <- WebCorpus(GoogleFinanceSource(stock.sym()))
-    #print(googlenews)
-    #}
-  #})
-#  
+  
+  output$opt.chain <- renderTable({
+    withProgress(message = "In Progress", 
+                 detail = "This may take a few seconds...", 
+                 value = 0, {for (i in 1:10) {
+                   incProgress(1/10)
+                   Sys.sleep(0.33)
+                 }
+                 })
+    detach("package:quantmod", unload=TRUE)    
+    require(flipsideR)
+    opt.price <- getOptionChain(symbol())
+    opt.price
+  })
+  
+#  output$news <- renderText({
+#    if(!is.null(symbol())) {
+#    googlenews <- WebCorpus(GoogleFinanceSource(symbol()))
+#    writeLines(as.character(googlenews[[1]]))
+#    }
+#  })
 })
   

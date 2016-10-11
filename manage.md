@@ -13,7 +13,8 @@
 - [x] Create sidebar tabs
 - [x] Write function to pull option chain data from Google Finance
 - [x] Debug "Error: 1: failed to load HTTP resource"
-- [ ] Implement progress-bar
+- [x] Explore a simple progress-bar idea
+- [ ] Implement a true progress-bar based on computation time
 - [ ] Implement news-mining code
 - [ ] Flowchart the logic of performing tech analysis on a stock
 - [ ] Customize Chart theme
