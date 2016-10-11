@@ -30,14 +30,20 @@ shinyUI(dashboardPage(skin = "red",
                 br(),
                 h3("Instructions"),
                 p("To use this tool, please type in a stock symbol such as AAPL, GOOG or MSFT and press `Generate Report`"),
-                p("Then proceed to the other tabs to check out the technical chart, related news and updated option prices."),
+                p("Then proceed to the other tabs to check out the technical chart, related news and an updated option chain."),
                 wellPanel(
                   textInput("stock", "Symbol:", value = "", width = "200px"),
                   submitButton(text = "Generate Report", width = "200px")
                   )),
         tabItem(tabName = "chart",
                 h2("Chart"),
-                plotOutput("mainPlot", height = "700px"))
+                plotOutput("mainPlot", height = "700px")),
+        tabItem(tabName = "news",
+                h2("News"),
+                textOutput("news")),
+        tabItem(tabName = "options",
+                h2("Option Chain"),
+                tableOutput("opt.chain"))
       )
     )
   )

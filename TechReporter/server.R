@@ -14,6 +14,17 @@ shinyServer(function(input, output) {
       })
   })
   
+  symbol <- reactive ({
+    input$stock
+  })
+  
+  output$opt.chain <- renderTable({
+    detach("package:quantmod", unload=TRUE)    
+    require(flipsideR)
+        opt.price <- getOptionChain(symbol())
+        opt.price
+  })
+  
   output$mainPlot <- renderPlot({
     TA.indicators = "addVo(); addBBands(); addMACD(); addRSI(); 
 addSMI(n = 3, fas = 3, slow = 14); addSMA(n = 200, col = 'yellow');
@@ -31,5 +42,13 @@ addSMA(n = 50, col = 'green')"
                                    bg.col = "white"))
     }
   })
+  #output$news <- renderText({
+    #if(!is.null(stock.sym())) {
+      #x <- toString(stock.sym())
+    #googlenews <- WebCorpus(GoogleFinanceSource(stock.sym()))
+    #print(googlenews)
+    #}
+  #})
+#  
 })
   

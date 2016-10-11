@@ -9,7 +9,7 @@ addMACD()
 
 
 # Plot theme
-chchartTheme('whitex', fg.col = "white", bg.col = "grey")
+chartTheme('whitex', fg.col = "white", bg.col = "grey")
 
 chartSeries(GOOG, 
             subset = 'last 6 months', 

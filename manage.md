@@ -10,7 +10,10 @@
 - [x] Apply the indicators on the chart
 - [x] Implement code that accesses stock data
 - [x] Implement ShinyDashboard
-- [x] Create sidebar tabs 
+- [x] Create sidebar tabs
+- [x] Write function to pull option chain data from Google Finance
+- [x] Debug "Error: 1: failed to load HTTP resource"
+- [ ] Implement progress-bar
 - [ ] Implement news-mining code
 - [ ] Flowchart the logic of performing tech analysis on a stock
 - [ ] Customize Chart theme
