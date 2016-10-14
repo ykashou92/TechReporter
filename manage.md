@@ -14,6 +14,7 @@
 - [x] Write function to pull option chain data from Google Finance
 - [x] Debug "Error: 1: failed to load HTTP resource"
 - [x] Explore a simple progress-bar idea
+- [ ] Update README.md to introduce the TechReporter App
 - [ ] Implement a true progress-bar based on computation time
 - [ ] Implement news-mining code
 - [ ] Flowchart the logic of performing tech analysis on a stock
