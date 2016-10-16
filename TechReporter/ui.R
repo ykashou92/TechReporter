@@ -3,47 +3,46 @@
 ############
 
 # Define UI for application that draws a histogram
-shinyUI(dashboardPage(skin = "red",
+shinyUI(dashboardPage(skin = "yellow",
   
   # Application title
   dashboardHeader(title = "TechReporter"),
-  
+      
   # Sidebar with a slider input for number of bins 
   dashboardSidebar(
     sidebarMenu(
-      menuItem("Overview", tabName = "overview", icon = icon("dashboard")),
-      menuItem("TechReporter", tabName = "techreporter", icon = icon("bar-chart"),
-               menuSubItem("Generator", tabName  = "generator", icon = icon("gear")),
-               menuSubItem("Chart", tabName = "chart", icon = icon("line-chart")),
-               menuSubItem("News", tabName = "news", icon = icon("feed")),
-               menuSubItem("Options Prices", tabName = "options", icon = icon("list"))),
-      menuItem("Source Code", tabName = "sourcecode", icon = icon ("code"))
-      
+      br(),
+      textOutput("currentTime"),
+      tags$style(type='text/css', "#currentTime { text-align: center; font-size: 20px; }"),
+      br(),
+      menuItem("TechReporter", tabName = "techreporter", icon = icon("dashboard")),
+      menuItem("Chart", tabName = "chart", icon = icon("line-chart")),
+      menuItem("News", tabName = "news", icon = icon("feed")),
+      menuItem("Options Prices", tabName = "options", icon = icon("list")),
+      menuItem("Source Code", tabName = "sourcecode", icon = icon ("code")),
+      textInput("stock", "Symbol:", value = "GOOG"),
+      tags$style(type="text/css", "#stock { height: 50px; width: 100%; text-align:center; font-size: 30px;}"),
+      #sliderInput()
+      submitButton("Generate Report", width = "230px")
     )),
     dashboardBody(
       tabItems(
-        tabItem(tabName = "overview",
-                h2("Overview")
-        ),
-        tabItem(tabName = "generator",
-                h2("Welcome to the Generator"),
+        tabItem(tabName = "techreporter",
+                h2("Welcome to TechReporter", align = "center"),
+                #h3("Instructions"),
                 br(),
-                h3("Instructions"),
-                p("To use this tool, please type in a stock symbol such as AAPL, GOOG or MSFT and press `Generate Report`"),
-                p("Then proceed to the other tabs to check out the technical chart, related news and an updated option chain."),
-                wellPanel(
-                  textInput("stock", "Symbol:", value = "", width = "200px"),
-                  submitButton(text = "Generate Report", width = "200px")
-                  )),
+                p("To use this tool, please type in a stock symbol in the sidebar such as AAPL, GOOG or MSFT and press `Generate Report`", align = "center"),
+                p("Then proceed to the other tabs to check out the technical chart, related news and an updated option chain.", align = "center")),
         tabItem(tabName = "chart",
-                h2("Chart"),
+                h2("Chart", align = "center"),
                 plotOutput("mainPlot", height = "700px")),
         tabItem(tabName = "news",
-                h2("News"),
-                textOutput("news")),
+                h2("News", align = "center"),
+                htmlOutput("news")),
         tabItem(tabName = "options",
-                h2("Option Chain"),
-                tableOutput("opt.chain"))
+                h2("Option Chain", align = "center"),
+                p("Below is the option chain of your selected stock, it automatically updates every 10 seconds to provide you with fresh prices.", align = "center"),
+                dataTableOutput("OptionChain"))
       )
     )
   )

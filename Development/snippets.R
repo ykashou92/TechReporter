@@ -21,3 +21,27 @@ chartSeries(GOOG,
                                bg.col = "white"))
 addRSI()
 addMACD()
+
+
+### START OF REACTIVE POLL
+MyReact <- reactiveValues(df = data.frame(time = Sys.time()))
+readTimeStamp <- function() {
+  Sys.time()
+}
+
+readValue <- function() {
+  data.frame(time = readTimeStamp())
+}
+
+data.chain <- reactivePoll(10000, session, readTimeStamp, readValue)
+
+observe({
+  myReact$df <- rbind(isolate(myReact$df), data.chain())
+})
+
+output$opt.chain <- renderTable({
+  myReact$df
+})
+### END OF REACTIVE POLL
+
+
