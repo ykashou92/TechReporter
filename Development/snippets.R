@@ -44,4 +44,43 @@ output$opt.chain <- renderTable({
 })
 ### END OF REACTIVE POLL
 
+#tags$div(tags$style(".rightAlign{float:right;}")),
+#div(
+# style="display: inline-block", downloadButton('downloadChain', 'Export to CSV'), style = "float:right"
+
+
+#  output$opt.chain <- renderTable({
+
+#    withProgress(message = "In Progress", 
+#                 detail = "This may take a few seconds...", 
+#                 value = 0, {for (i in 1:10) {
+#                   incProgress(1/10)
+#                   Sys.sleep(0.33)
+#                 }
+
+
+#    detach("package:quantmod", unload=FALSE)    
+#    require(flipsideR)
+#    opt.price <- getOptionChain(symbol())
+#    colnames(opt.price) <- c("Symbol", "Type", "Expiry", "Strike", "Premium", "Bid", "Ask", "Volume", "Open-Interest", "Time-Retrieved")
+#    opt.price
+#    })
+#  })
+
+# Knitr Report Generator
+output$downloadReport <- downloadHandler(
+  filename = function() {
+    paste('my-report', sep = '.', switch(
+      input$format, PDF = 'pdf', HTML = 'html', Word = 'docx'
+    ))
+  },
+  content = function(file2) {
+    out <- render('report.Rmd', switch(
+      input$format,
+      PDF = pdf_document(), HTML = html_document(), Word = word_document()
+    ))
+  }
+)
+
+
 

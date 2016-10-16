@@ -1,3 +1,6 @@
+---
+output: pdf_document
+---
 # TechReporter Project Management
 
 - [x] Setup local directory
@@ -18,7 +21,9 @@
 - [x] Fix redundancy in detach code
 - [x] Debug detach error
 - [x] Fix sidebar aesthetics (alignment)
-- [ ] Implement a download button for the option chain (Export to CSV)
+- [x] Implement a download button for the option chain (Export to CSV)
+- [x] Fix the download button for the option chain
+- [ ] Decide whether to add .Rmd report generation or not
 - [ ] Integrate timeseries chart zoom slider within sidebar (1/3/6/9/12/18/24/36/60 Months)
 - [ ] Update README.md to introduce the TechReporter App
 - [ ] Implement a true progress-bar based on computation time

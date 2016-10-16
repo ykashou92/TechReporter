@@ -17,3 +17,5 @@ library(tm.plugin.webmining)
 
 # Load Visualization Packages
 library(plotly)
+library(knitr)
+library(rmarkdown)

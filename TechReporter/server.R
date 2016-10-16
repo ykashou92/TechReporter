@@ -25,7 +25,7 @@ shinyServer(function(input, output, session) {
   
   output$mainPlot <- renderPlot({
     TA.indicators = "addVo(); addBBands(); addMACD(); addRSI(); 
-addSMI(n = 3, fas = 3, slow = 14); addSMA(n = 200, col = 'yellow');
+addSMI(n = 3, fas = 3, slow = 14); addSMA(n = 200, col = 'navy');
 addSMA(n = 50, col = 'green')"
     
     if(!is.null(stock.sym())) {
@@ -33,43 +33,35 @@ addSMA(n = 50, col = 'green')"
                 name = input$stock,
                 subset = 'last 6 months', 
                 TA = TA.indicators,
-                theme = chartTheme("white", 
-                                   up.col = "#87CEEB", 
+                theme = chartTheme("white",
+                                   up.col = "blue", 
                                    dn.col = "red", 
                                    fg.col = "black", 
-                                   bg.col = "white"))
+                                   bg.col = "#ECF0F5",
+                                   grid.col = "black",
+                                   border = "pink"))
     }
   })
-
+  #87CEE
   output$OptionChain <- renderDataTable({
     invalidateLater(60000, session)
-    OptionChain <- flipsideR:::getOptionChain(symbol())
+    opt.chain <- flipsideR:::getOptionChain(symbol())
     #OptionChain$retrieved = as.POSIXct(OptionChain$retrieved)
-    colnames(OptionChain) <- c("Symbol", "Type", "Expiry", "Strike", "Premium", "Bid", "Ask", "Volume", "Open-Interest", "Time-Retrieved")
-    OptionChain
+    colnames(opt.chain) <- c("Symbol", "Type", "Expiry", "Strike", "Premium", "Bid", "Ask", "Volume", "Open-Interest", "Time-Retrieved")
+    
     #write.csv(OptionChain, file = "OptionChain.csv")
     #UpdatedOptionChain <- reactiveFileReader(10000, session, 'OptionChain.csv', read.csv)
     #UpdatedOptionChain()
-  })
-  
-  
-#  output$opt.chain <- renderTable({
-
-#    withProgress(message = "In Progress", 
-#                 detail = "This may take a few seconds...", 
-#                 value = 0, {for (i in 1:10) {
-#                   incProgress(1/10)
-#                   Sys.sleep(0.33)
-#                 }
     
-                  
-#    detach("package:quantmod", unload=FALSE)    
-#    require(flipsideR)
-#    opt.price <- getOptionChain(symbol())
-#    colnames(opt.price) <- c("Symbol", "Type", "Expiry", "Strike", "Premium", "Bid", "Ask", "Volume", "Open-Interest", "Time-Retrieved")
-#    opt.price
-#    })
-#  })
+    # Option Chain Download Button
+    output$downloadChain <- downloadHandler(
+      filename = function() { paste(symbol(), '-option-chain-', Sys.time(), '.csv', sep = '') 
+      },
+      content = function(file) {
+        write.csv(opt.chain, file)})
+    opt.chain
+     })
+
     output$news <- renderText({
     if(!is.null(symbol())) {
       googlenews <- WebCorpus(GoogleNewsSource(symbol()))
