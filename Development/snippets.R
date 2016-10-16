@@ -82,5 +82,9 @@ output$downloadReport <- downloadHandler(
   }
 )
 
+#OptionChain$retrieved = as.POSIXct(OptionChain$retrieved)
+#write.csv(OptionChain, file = "OptionChain.csv")
+#UpdatedOptionChain <- reactiveFileReader(10000, session, 'OptionChain.csv', read.csv)
+#UpdatedOptionChain()
 
 
