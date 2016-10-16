@@ -14,6 +14,8 @@
 - [x] Write function to pull option chain data from Google Finance
 - [x] Debug "Error: 1: failed to load HTTP resource"
 - [x] Explore a simple progress-bar idea
+- [ ] Get rid of menu sub-items
+- [ ] Integrate timeseries chart zoom slider within sidebar (1/3/6/9/12/18/24/36/60 Months)
 - [ ] Update README.md to introduce the TechReporter App
 - [ ] Implement a true progress-bar based on computation time
 - [ ] Implement news-mining code
