@@ -35,5 +35,7 @@ output: pdf_document
 - [ ] Debug, identify and fix problems with report generation
 - [ ] Implement auto support-resistance lines
 - [ ] Implement Roxygen Skeleton
+- [ ] Clean Code
+- [ ] Comment Code
 - [ ] Finishing touches
 - [ ] App Deployed!
