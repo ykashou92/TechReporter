@@ -79,13 +79,31 @@ addSMA(n = 50, col = 'navy')"
   
   #pdf(tech.report, file)
     
-    output$news <- renderText({
+    output$news1 <- renderText({
       googlenews <- WebCorpus(GoogleFinanceSource(symbol()))
-      x <- sapply(googlenews, function(x) {x$content})
+      #x <- sapply(googlenews, function(x) {x$content})
+      #x[[1]]
+      meta(googlenews[[1]])
+      googlenews[[1]]$content
+    })
+      output$news2 <- renderText({
+        googlenews <- WebCorpus(GoogleFinanceSource(symbol()))
+        #x <- sapply(googlenews, function(x) {x$content})
+        #x[[1]]
+        meta(googlenews[[2]])
+        googlenews[[2]]$content
+      #inspect(aapl.googlenews)
+      #meta(aapl.googlenews[[1]])
+      
+      #fileConn <- file("output.txt")
+      #writeLines(as.character(googlenews[[1]]), fileConn)
+      #file.show("output.txt")
+      #close(fileConn)
+      
       #googlenews <- WebCorpus(GoogleFinanceSource(symbol()))
       #x <- sapply(googlenews, function(x) {x$content})
       #x2 <- sapply(googlenews[[2]], function(x) {x$content})
-      x[[1]]
+      
       #x2
       #as.data.frame(googlenews) %>%
       #  with(., invisible(sapply(text, function(x) {strWrap(x);})))

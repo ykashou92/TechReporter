@@ -23,16 +23,15 @@ output: pdf_document
 - [x] Fix sidebar aesthetics (alignment)
 - [x] Implement a download button for the option chain (Export to CSV)
 - [x] Fix the download button for the option chain
+- [x] Implement news-mining code
+- [ ] Customize Chart theme
 - [ ] Decide whether to add .Rmd report generation or not
 - [ ] Integrate timeseries chart zoom slider within sidebar (1/3/6/9/12/18/24/36/60 Months)
 - [ ] Update README.md to introduce the TechReporter App
 - [ ] Implement a true progress-bar based on computation time
-- [ ] Implement news-mining code
 - [ ] Flowchart the logic of performing tech analysis on a stock
-- [ ] Customize Chart theme
 - [ ] Setup knitting template for the report to be generated
-- [ ] Implement a button to generate
-- [ ] Generate sample report
+- [ ] Implement a button to generate sample report
 - [ ] Debug, identify and fix problems with report generation
 - [ ] Implement auto support-resistance lines
 - [ ] Implement Roxygen Skeleton

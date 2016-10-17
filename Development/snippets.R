@@ -87,4 +87,9 @@ output$downloadReport <- downloadHandler(
 #UpdatedOptionChain <- reactiveFileReader(10000, session, 'OptionChain.csv', read.csv)
 #UpdatedOptionChain()
 
+fileConn <- file("output.txt")
+writeLines(as.character(googlenews[[1]] & googlenews[[2]]), fileConn)
+file.show("output.txt")
+close(fileConn)
+
 
