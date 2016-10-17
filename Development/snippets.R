@@ -93,3 +93,28 @@ file.show("output.txt")
 close(fileConn)
 
 
+#inspect(aapl.googlenews)
+#meta(aapl.googlenews[[1]])
+
+#fileConn <- file("output.txt")
+#writeLines(as.character(googlenews[[1]]), fileConn)
+#file.show("output.txt")
+#close(fileConn)
+
+#googlenews <- WebCorpus(GoogleFinanceSource(symbol()))
+#x <- sapply(googlenews, function(x) {x$content})
+#x2 <- sapply(googlenews[[2]], function(x) {x$content})
+
+#x2
+#as.data.frame(googlenews) %>%
+#  with(., invisible(sapply(text, function(x) {strWrap(x);})))
+#news.text.df = as.data.frame(do.call(rbind, news.text))
+#write(news.text, "news.txt")
+#news.pdf <- pdf(news.text)
+
+#x <- sapply(googlenews, function(x) {x$content})
+#x[[1]]
+
+#x <- sapply(googlenews, function(x) {x$content})
+#x[[1]]
+

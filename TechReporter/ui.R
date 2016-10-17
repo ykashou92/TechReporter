@@ -7,18 +7,21 @@ shinyUI(dashboardPage(skin = "yellow",
   # Application title
   dashboardHeader(title = "TechReporter"),
       
-  # Sidebar with a slider input for number of bins 
+  # Siderbar Setup
   dashboardSidebar(
     sidebarMenu(
       br(),
       textOutput("currentTime"),
       tags$style(type='text/css', "#currentTime { text-align: center; font-size: 20px; }"),
       br(),
+      # Menu Items
       menuItem("TechReporter", tabName = "techreporter", icon = icon("dashboard")),
       menuItem("Technical Chart", tabName = "chart", icon = icon("line-chart")),
       menuItem("News", tabName = "news", icon = icon("feed")),
       menuItem("Option Prices", tabName = "options", icon = icon("list")),
       menuItem("Source Code", tabName = "sourcecode", icon = icon ("code")),
+      
+      # Input Fields and Widgets
       textInput("stock", "Symbol:", value = "GOOG"),
       tags$style(type="text/css", "#stock { height: 50px; width: 100%; text-align:center; font-size: 30px;}"),
       #sliderInput()
@@ -31,6 +34,7 @@ shinyUI(dashboardPage(skin = "yellow",
       )
     )),
   
+    # Body Setup
     dashboardBody(
       tabItems(
         tabItem(tabName = "techreporter",
@@ -48,7 +52,6 @@ shinyUI(dashboardPage(skin = "yellow",
                 br(),
                 h4("News Piece 2"),
                 textOutput("news2")),
-                #includeText("mycorpus.txt"),
         tabItem(tabName = "options",
                 h2("Option Chain", align = "center"),
                 p("Below is the option chain of your selected stock, it automatically updates every 60 seconds to provide you with fresh prices.", align = "center"),
