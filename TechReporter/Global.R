@@ -14,8 +14,9 @@ library(flipsideR)
 # Load Text-Mining Packages
 library(tm)
 library(tm.plugin.webmining)
+library(qdap)
 
 # Load Visualization Packages
 library(plotly)
 library(knitr)
-library(rmarkdown)
+library(markdown)

@@ -76,14 +76,19 @@ addSMA(n = 50, col = 'navy')"
       })
 
   #file.create("mycorpus.txt")
-  #writeLines(as.character(news.text), con="mycorpus.txt")
+  
   #pdf(tech.report, file)
-  
-  
+    
     output$news <- renderText({
       googlenews <- WebCorpus(GoogleFinanceSource(symbol()))
       x <- sapply(googlenews, function(x) {x$content})
-      x
+      #googlenews <- WebCorpus(GoogleFinanceSource(symbol()))
+      #x <- sapply(googlenews, function(x) {x$content})
+      #x2 <- sapply(googlenews[[2]], function(x) {x$content})
+      x[[1]]
+      #x2
+      #as.data.frame(googlenews) %>%
+      #  with(., invisible(sapply(text, function(x) {strWrap(x);})))
       #news.text.df = as.data.frame(do.call(rbind, news.text))
       #write(news.text, "news.txt")
       #news.pdf <- pdf(news.text)
